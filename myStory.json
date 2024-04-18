@@ -1,0 +1,162 @@
+{
+    "Title": "Lonely Lodge",
+    "Credits": "Created by David Guerrero-Pantoja (dguerr15@ucsc.edu).",
+    "InitialLocation": "Start",
+    "Locations": {
+        "Start": {
+            "Body": "You hear the phone ring",
+            "Choices": [
+                {
+                    "Text": "Pick it up",
+                    "Target": "Next"
+                }
+            ]
+        },
+        "Next": {
+            "Body": "*cough* Hello Detective, we are calling because we are worried about our neighbors. They were a very sweet couple that kept to themselves mainly, but I haven't seen them in weeks, they aren't the type to travel. Could you check in on them I'm worried.",
+            "Choices": [
+                {
+                    "Text": "Go to House",
+                    "Target": "House"
+                }
+            ]
+        },
+        "House": {
+            "Body": "You get to the house. It's a creaky old wooden lodge in surrounded by a big forest. You are surprised neighbors would even notice anything going on in the house.",
+            "Choices": [
+                {
+                    "Text": "Enter the House",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Living Room": {
+            "Body": "This is the living room, theres a dusty couch, a coffe table, and a tv. You can tell the couple did not clean up very much",
+            "Choices": [
+                {
+                    "Text": "Go to Hallway",
+                    "Target": "Hallway"
+                },
+                {
+                    "Text": "Go to Kitchen",
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "Go to Garden",
+                    "Target": "Garden"
+                }
+            ]
+        },
+        "Hallway": {
+            "Body": "This is the hallway, nothing much here just a few art pieces",
+            "Choices": [
+                {
+                    "Text": "Go to Attic",
+                    "Target": "Attic"
+                },
+                {
+                    "Text": "Go to Bedroom",
+                    "Target": "Bedroom"
+                },
+                {
+                    "Text": "Go back into Living Room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Attic": {
+            "Body": "This is the attic, there are loads of dusty boxes, the only light coming into the attic shines on a very old glitchy recorder",
+            "Choices": [
+                {
+                    "Text": "Back Down",
+                    "Target": "Hallway"
+                },
+                {
+                    "Text": "Play Message on Recorder",
+                    "Target": "Attic",
+                    "Action": "PlayMessage"
+                }
+            ],
+            "Mechanism":{
+                "Type": "Radio",
+                "State": "Off",
+                "Messages": ["MMMMMMMMmmmmmmm cookies", "How does this thing work, JOHNNNNNNN!!!!", "If anybody finds this, all the answers are in the shed"]
+            }
+        },
+        "Bedroom":{
+            "Body": "This is the bedroom, there is one large bed with a nightshelf on each side. The sheets are done and it is the cleanest room. Although that is not saying much",
+            "Choices": [
+                {
+                    "Text": "Back into Hallway",
+                    "Target": "Hallway"
+                }
+            ]
+        },
+        "Kitchen": {
+            "Body": "This is the Kitchen, there is a huge pile of dirty dishes in the sink, the stove top is nasty, and the ricecooker is still plugged in. It almost looks like it was left in a hurry",
+            "Choices": [
+                {
+                    "Text": "Go into the Pantry",
+                    "Target": "Pantry"
+                },
+                {
+                    "Text": "Back into Living Room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Pantry":{
+            "Body": "This is the pantry, there are a lots of snacks, chips-ahoy, cheez-it's, popcorn, and chips",
+            "Choices":[
+                {
+                    "Text": "Back into Kitchen",
+                    "Target": "Kitchen"
+                },
+                {
+                   "Text": "Get some cookies",
+                   "Target": "Pantry",
+                   "Action": "GetKey"
+                },
+                {
+                    "Text": "Get some chips",
+                    "Target": "Pantry"
+                },
+                {
+                    "Text": "Get some popcorn",
+                    "Target": "Pantry"
+                },
+                {
+                    "Text": "Get some cheez-it's",
+                    "Target": "Pantry"
+                }
+            ]
+        },
+        "Garden":{
+            "Body": "A peaceful garden with colorful flowers.",
+            "Choices":[
+                {
+                    "Text": "Back into Living Room",
+                    "Target": "Living Room"
+                },
+                {
+                   "Text": "Go into Shed",
+                   "RequiresKey": true,
+                   "Target":"Shed"
+                }
+            ]
+        },
+        "Shed": {
+            "Body": "The shed is a dark and gloomy place. There are a bunch of tools and general storage items. On the workbench you notice a note.",
+            "Choices":[
+                {
+                    "Text": "Read the note",
+                    "Target": "Note"
+                }
+            ]
+        }
+        ,
+        "Note": {
+            "Body": "Good job Detective, this was a trial. We are excited how you do in the future."
+        }
+    }
+}
